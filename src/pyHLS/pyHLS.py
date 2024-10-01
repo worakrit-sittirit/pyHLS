@@ -63,3 +63,44 @@ def HlsResetMKY36(handleObject):
     tmp_rslt = hlsDll.HlsResetMKY36(ctypes.byref(handleObject))
     return tmp_rslt.value
 
+def HlsReadWord(handleObject, readAdr, rsltData):
+    tmp_rslt = hlsDll.HlsReadWord(ctypes.byref(handleObject), readAdr, ctypes.byref(rsltData))
+    return tmp_rslt.value
+
+def HlsWriteWord(handleObject, writeAdr, writeData):
+    tmp_rslt = hlsDll.HlsWriteWord(ctypes.byref(handleObject), writeAdr, writeData)
+    return tmp_rslt.value
+
+def HlsReadCTL(handleObject, rsltData):
+    '''
+        rsltData size 128
+    '''
+    tmp_rslt = hlsDll.HlsReadCTL(ctypes.byref(handleObject), ctypes.byref(rsltData))
+    return tmp_rslt.value
+
+def HlsReadDI(handleObject, rsltData):
+    '''
+        rsltData size 128
+    '''
+    tmp_rslt = hlsDll.HlsReadDI(ctypes.byref(handleObject), ctypes.byref(rsltData))
+    return tmp_rslt.value
+
+def HlsReadDRC(handleObject, rsltData):
+    '''
+        rsltData size 128
+    '''
+    tmp_rslt = hlsDll.HlsReadDRC(ctypes.byref(handleObject), ctypes.byref(rsltData))
+    return tmp_rslt.value
+
+
+def HlsReadData(handleObject, readAdr, wordLen, rsltData):
+    tmp_rslt = hlsDll.HlsReadData(ctypes.byref(handleObject), readAdr, wordLen, ctypes.byref(rsltData))
+    return tmp_rslt.value
+
+def HlsWriteData(handleObject, writeAdr, wordLen, writeData):
+    tmp_rslt = hlsDll.HlsWriteData(ctypes.byref(handleObject), writeAdr, wordLen, writeData)
+    return tmp_rslt.value
+
+def HlsGetFirmwareVersion(handleObject):
+    tmp_rslt = hlsDll.HlsGetFirmwareVersion(ctypes.byref(handleObject))
+    return tmp_rslt.value
